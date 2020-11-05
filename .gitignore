@@ -126,3 +126,7 @@ dmypy.json
 
 # FlavorDB data directory
 FlavorDB/
+
+# Other directories
+.vscode/
+.idea/
