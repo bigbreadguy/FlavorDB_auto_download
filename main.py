@@ -29,20 +29,20 @@ while True:
     except:
         try:
             url = "https://cosylab.iiitd.edu.in/flavordb/entities_json?id=%d" % index + 1
-        data = requests.get(url).json()
-        obj = json.dumps(data)
-        
-        name_key = "entity_alias_readable"
-        name = data[name_key]
+            data = requests.get(url).json()
+            obj = json.dumps(data)
+            
+            name_key = "entity_alias_readable"
+            name = data[name_key]
 
-        print("Downloading %s data" % name)
+            print("Downloading %s data" % name)
 
-        file_name = os.path.join(db_dir, "%d.json" % index + 1)
+            file_name = os.path.join(db_dir, "%d.json" % index + 1)
 
-        with open(file_name,'w') as f:
-            json.dump(data, f, indent=4, sort_keys=True)
-        
-        index+=1
+            with open(file_name,'w') as f:
+                json.dump(data, f, indent=4, sort_keys=True)
+            
+            index+=1
         except:
             print("Done")
             break
